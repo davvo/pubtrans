@@ -60,7 +60,7 @@ const processOne = (feature, callback) => {
 		AND way && ST_MakeEnvelope(${bboxMercator.join(', ')}, 3857)
 		`
 
-	const client = new pg.Client('postgres://104.199.41.52/gis')
+	const client = new pg.Client(args.pg || 'postgres://localhost:5432/gis')
 
 	client.connect(err => {
   		if (err) throw err
