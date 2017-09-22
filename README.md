@@ -2,6 +2,13 @@
 
 Extract bus stops and train stations from [OpenStreetMap](https://www.openstreetmap.org/)
 
+## Install ##
+```
+$ git clone https://github.com/davvo/pubtrans.git
+$ cd pubtrans
+$ npm install
+```
+
 ## Example usage ##
 
 Extract points from a local osm database. The first argument should be a geojson file containing features of type Polygon (or MultiPolygon). Only points that are contained by a polygon will be written to output.
@@ -48,10 +55,3 @@ $ brew install node
 You also need access to OpenStreetMap data loaded in PostgreSQL database. 
 
 https://switch2osm.org/loading-osm-data/
-
-## Install ##
-```
-$ git clone https://github.com/davvo/streetpoints.git
-$ cd streetpoints
-$ npm install
-```
