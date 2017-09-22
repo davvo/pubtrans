@@ -47,7 +47,6 @@ const rowsToGeoJson = (rows) => ({
 })
 
 const processOne = (feature, callback) => {
-	console.error(feature.properties.NAME_1, feature.properties.NAME_2, feature.properties.NAME_3)
 	const outer = feature.geometry.coordinates[0]
 	const bounds = bbox(feature)
 	const minMercator = mercator.latLonToMeters(bounds[1], bounds[0])
@@ -75,10 +74,10 @@ const processOne = (feature, callback) => {
 				if (inside(lnglat, outer)) {
 					console.log([
 						feature.id, 
+						feature.properties.name,
 						feature.geometry.coordinates[1].toFixed(6),
 						feature.geometry.coordinates[0].toFixed(6),
-						feature.properties.name,
-						feature.properties.type
+						//feature.properties.type
 					].join(';'))
 				}
 			})
